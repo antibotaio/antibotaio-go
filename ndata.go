@@ -13,12 +13,13 @@ const (
 )
 
 type SyncInput struct {
-	Href      string `json:"href"`
-	Website   string `json:"website"`
-	Body      string `json:"body"`
-	UserAgent string `json:"user_agent"`
-	Language  string `json:"language"`
-	Timezone  string `json:"timezone"`
+	Href      string                 `json:"href"`
+	Website   string                 `json:"website"`
+	Body      string                 `json:"body"`
+	UserAgent string                 `json:"user_agent"`
+	Language  string                 `json:"language"`
+	Timezone  string                 `json:"timezone"`
+	Args      map[string]interface{} `json:"args"`
 }
 
 type NuDataWidgetTask struct {
