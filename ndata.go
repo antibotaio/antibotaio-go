@@ -23,12 +23,14 @@ type SyncInput struct {
 }
 
 type NuDataWidgetTask struct {
-	Body string `json:"body"`
+	Body   string                 `json:"body"`
+	Device map[string]interface{} `json:"device,omitempty"`
 }
 
 type SolveSyncResponse struct {
-	ID       string `json:"id"`
-	Solution string `json:"solution"`
+	ID       string                 `json:"id"`
+	Solution string                 `json:"solution"`
+	Device   map[string]interface{} `json:"device,omitempty"`
 }
 
 type SolveWidgetResponse struct {
