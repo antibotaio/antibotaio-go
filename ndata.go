@@ -19,12 +19,12 @@ type SyncInput struct {
 	UserAgent string                 `json:"user_agent"`
 	Language  string                 `json:"language"`
 	Timezone  string                 `json:"timezone"`
-	Args      map[string]interface{} `json:"args"`
+	Args      map[string]interface{} `json:"args,omitempty"`
 }
 
 type NuDataWidgetTask struct {
-	Body   string                 `json:"body"`
-	Device map[string]interface{} `json:"device,omitempty"`
+	Body string                 `json:"body"`
+	Args map[string]interface{} `json:"args,omitempty"`
 }
 
 type SolveSyncResponse struct {
@@ -34,7 +34,8 @@ type SolveSyncResponse struct {
 }
 
 type SolveWidgetResponse struct {
-	Solution string `json:"solution"`
+	Solution string                 `json:"solution"`
+	Device   map[string]interface{} `json:"device,omitempty"`
 }
 
 func (s *Session) SolveSync(input *SyncInput) (*SolveSyncResponse, error) {
